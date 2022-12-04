@@ -26,8 +26,12 @@ export class CatsService {
   update(id: number, updateCatDto: UpdateCatDto) {
     return `This action updates a #${id} cat`;
   }
-
-  remove(id: number) {
+  // async remove(id: number): Promise<void> {
+  //   await this.catsRepository.delete(id);
+  
+  // }
+  async remove(id: number) {
+    await this.catsRepository.delete(id);
     return `This action removes a #${id} cat`;
   }
 }
